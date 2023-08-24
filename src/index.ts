@@ -14,7 +14,7 @@ const server = new ApolloServer<MyContext>({
 
 const { url } = await startStandaloneServer(server, {
   listen: {
-    port: 4000,
+    port: parseInt(process.env.PORT || "4000"),
   },
   context: async () => {
     const { cache } = server;
