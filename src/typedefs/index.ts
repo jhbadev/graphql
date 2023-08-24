@@ -1,14 +1,26 @@
-export const typeDefs = `#graphql 
 
+
+export const typeDefs = `#graphql 
 "Type User"
 type User  {
   "ID de User"
     id: ID
     name: String
+    username: String
     email: String
-    role: Role
+    address: Address
+ 
+
 }
 
+
+type Address {
+  city: String
+  street: String
+  zipcode: String
+
+}
+ 
 input UserID{
   uid: ID
 }
@@ -23,7 +35,7 @@ type Role {
 
 type Query {
     users: [User]
-    user(id: UserID!): User
+    user: [User]
 }
 
 type Query {
